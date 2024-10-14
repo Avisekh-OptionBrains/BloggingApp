@@ -14,7 +14,6 @@ const userSchema = new Schema(
     },
     salt: {
       type: String,
-      required: true,
     },
     password: {
       type: String,
@@ -38,7 +37,7 @@ userSchema.pre("save", function (next) {
   if (!user.isModified("password")) return;
   const salt = randomBytes(16).toString();
   const hashedPassword = createHmac("sha256", salt)
-    .uodate(user.password)
+    .update(user.password)
     .digest("hex");
   this.salt = salt;
   this.password = hashedPassword;
