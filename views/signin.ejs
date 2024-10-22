@@ -2,22 +2,12 @@
 <html lang="en">
   <head>
     <%- include ("./partials/head") %>
-    <title>Signup</title>
+    <title>Signin</title>
   </head>
   <body>
     <%- include ("./partials/nav") %>
     <div class="container mt-4">
-      <form action="/user/signup" method="post">
-        <div class="form-group">
-          <label for="fullName">Full Name </label>
-          <input
-            type="Text"
-            name="fullName"
-            class="form-control"
-            id="fullName"
-            placeholder="Full Name"
-          />
-        </div>
+      <form action="/user/signin" method="post">
         <div class="form-group">
           <label for="exampleInputEmail1">Email address</label>
           <input
